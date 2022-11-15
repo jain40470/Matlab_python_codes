@@ -1,0 +1,21 @@
+syms x y z S W lambda V1 V positive 
+C = 4*x*y + 2*6*x*(x+y);
+V1 = x*y*z;
+
+grad_Cx = diff(C,x);
+grad_Cy = diff(C,y);
+grad_Cz = diff(C,z);
+
+grad_V1x = diff(V1,x);
+grad_V1y = diff(V1,y);
+grad_V1z = diff(V1,z);
+
+eqns = [grad_Cx==lambda*grad_V1x],grad_Cy==lambda*grad_V1y],grad_Cz==lambda*grad_V1z],V1==V];
+
+P = solve(eqns,[x y z lamdba])
+
+x0 = simplify(P.x)
+y0 = simplify(P.y)
+z0 = simplify(P.z)
+
+lambda0 = simplify(P.lambda)
