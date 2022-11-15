@@ -10,9 +10,9 @@ grad_V1x = diff(V1,x);
 grad_V1y = diff(V1,y);
 grad_V1z = diff(V1,z);
 
-eqns = [grad_Cx==lambda*grad_V1x],grad_Cy==lambda*grad_V1y],grad_Cz==lambda*grad_V1z],V1==V];
+eqns = [grad_Cx==lambda*grad_V1x,grad_Cy==lambda*grad_V1y,grad_Cz==lambda*grad_V1z,V1==V];
 
-P = solve(eqns,[x y z lamdba])
+P = solve(eqns,[x y z lambda])
 
 x0 = simplify(P.x)
 y0 = simplify(P.y)
