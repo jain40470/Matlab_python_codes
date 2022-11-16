@@ -36,7 +36,7 @@ def main():
 
     i = 0.01
 
-    count = 0
+    # count = 0
 
     while (i <= b):
 
@@ -52,9 +52,9 @@ def main():
             y_cal.append(y_cal[op-1]+(k1+k2)/2)
         i = i + h
 
-        count = count + 1
+        # count = count + 1
 
-    print(count)
+    # print(count)
     plt.plot(x_cal, y_cal, 'r', label="Calculated-RK-2")
     plt.legend()
     plt.plot(x_cal, y_org, 'b', label="EXACT")
